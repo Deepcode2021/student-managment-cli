@@ -3,7 +3,7 @@ class Student:
         self.id = id
         self.name = name
         self.marks = marks
-        # self.marks =0
+        # self.marks
     def add_marks(self ,mark):
         self.marks.append(mark)
 
