@@ -26,7 +26,6 @@ marks = [int(x) for x in marks.split(sep=",")] # this will convert the marks val
 student1 = Student(id ,name ,marks)
 student1.display()
 
-
 # WE can directly put the list to the main class but lets do this way also
 # for _ in marks:
 #     student1.add_marks(_)
