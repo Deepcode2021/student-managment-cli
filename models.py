@@ -7,19 +7,20 @@ class Student:
     def add_marks(self ,mark):
         self.marks.append(mark)
 
-    def average(self , average):
+    def average(self):
         if len(self.marks) == 0 :
             return 0
         else:
             return sum(self.marks)/len(self.marks) # average of the marks 
+            print(average())
     def display(self):
-        print(f"Student | {self.id} | {self.name} | {self.marks} | {self.average} |")
+        print(f"Student | {self.id} | {self.name} | {self.marks} | {self.average()} |") #calling of average funtion is necessary
 
 id = int(input("Enter the ID: "))
 name = str(input("Enter the name: "))
 marks = input("Enter the marks of 3 (10,20,30): ")
-
-marks = marks.split(sep=",")
+marks = [int(x) for x in marks.split(sep=",")] # this will convert the marks values in "int"
+# marks = marks.split(sep=",")
 # print(marks)
 
 student1 = Student(id ,name ,marks)
