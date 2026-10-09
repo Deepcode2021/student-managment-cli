@@ -1,8 +1,13 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Student:
     def __init__(self, id ,name, marks):
-        self.id = id
-        self.name = name
-        self.marks = marks
+        self.id = int
+        self.name = str
+        self.marks = list[int]
+
         # self.marks
     def add_marks(self ,mark):
         self.marks.append(mark)
@@ -12,21 +17,21 @@ class Student:
             return 0
         else:
             return sum(self.marks)/len(self.marks) # average of the marks 
-            print(average())
+            # print(average())
     def display(self):
-        print(f"Student | {self.id} | {self.name} | {self.marks} | {self.average()} |") #calling of average funtion is necessary
+        print(f"Student | {self.id} | Name :{self.name} | Marks :{self.marks} | Avg :{self.average()} |") #calling of average funtion is necessary
 
-id = int(input("Enter the ID: "))
-name = str(input("Enter the name: "))
-marks = input("Enter the marks of 3 (10,20,30): ")
-marks = [int(x) for x in marks.split(sep=",")] # this will convert the marks values in "int"
+# id = int(input("Enter the ID: "))
+# name = str(input("Enter the name: "))
+# marks = input("Enter the marks of 3 (10,20,30): ")
+# marks = [int(x) for x in marks.split(sep=",")] # this will convert the marks values in "int"
 # marks = marks.split(sep=",")
 # print(marks)
 
-student1 = Student(id ,name ,marks)
-student1.display()
+# student1 = Student(id ,name ,marks)
+# student1.display()
 
-# WE can directly put the list to the main class but lets do this way also
+# can directly put the list to the main class but lets do this way also
 # for _ in marks:
 #     student1.add_marks(_)
 

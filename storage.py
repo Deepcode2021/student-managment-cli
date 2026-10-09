@@ -22,6 +22,7 @@ def save_students(student):
 
     with open("student_data.json", "w") as file:
         json.dump(student_dict ,file, indent=4)
+        print("Student Added.")
 
 
 # load_students()
