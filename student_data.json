@@ -27,5 +27,15 @@
             10
         ],
         "average_mark": 65.0
+    },
+    {
+        "id": 43,
+        "name": "mk12",
+        "marks": [
+            45,
+            67,
+            89
+        ],
+        "average_mark": 67.0
     }
 ]

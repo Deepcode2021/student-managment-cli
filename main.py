@@ -1,5 +1,6 @@
 from models import Student
 import storage
+import math
 
 # main funtion 
 while True:
@@ -22,8 +23,33 @@ while True:
         else:
             for s in students:
                 s.display()  # This will print your formatted row nicely
-        print("---------------------------------\n")
-    # elif user == 3:
+        for _ in range(1,20):print("-",end="--")
+        print(end="\n")
+
+    elif user == 3:
+        data = storage.load_students()
+        print("1 By ID  2 By Name")
+        user = int(input(": "))
+        if user == 1:
+            search_id = int(input("Id :"))
+            for s in data:
+                if s.id == search_id: # error here i used s[id] this is used for dict not instance
+                    s.display()
+                    break
+
+                else:
+                    print("This ID not exist")
+        elif user == 2:
+            search_name = str(input("Name :"))
+            for s in data:
+                if s.name == search_name:
+                    s.display()
+                    break
+                else:
+                    print("This ID not exist")
+        else:
+            print("what is this man!!!")
+
     # elif user == 4:
     # elif user == 5:
     elif user == 6:
