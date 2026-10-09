@@ -7,6 +7,14 @@ def space():
     for _ in range(1,20):print("-",end="--")
     print(end="\n")
 
+def add():
+    id = int(input("Enter the ID: "))
+    name = str(input("Enter the name: "))
+    marks = input("Enter the marks of 3 (10,20,30): ")
+    marks = [int(x) for x in marks.split(sep=",")]
+    stu = Student(id=id, name=name, marks=marks)
+    storage.save_students(stu)
+
 
 # main funtion 
 while True:
@@ -14,12 +22,7 @@ while True:
     user = int(input("Choose : "))
 
     if user == 1:
-        id = int(input("Enter the ID: "))
-        name = str(input("Enter the name: "))
-        marks = input("Enter the marks of 3 (10,20,30): ")
-        marks = [int(x) for x in marks.split(sep=",")]
-        stu = Student(id=id, name=name, marks=marks)
-        storage.save_students(stu)
+        add()
     elif user == 2:
         print("\n--- Student Database Records ---")
         students = storage.load_students()
@@ -53,8 +56,20 @@ while True:
         space()
 
     elif user == 4:
+        data = storage.load_students()
         user_id = int(input("ID: "))
-        
+        for s in data:
+            if s.id == user_id: 
+                s.display()
+            user_name = str(input("Name: "))
+            if s.name == user_name:
+                id = int(input("New ID: "))
+                name = str(input("new name: "))
+                marks = input("new marks of 3 (10,20,30): ")
+                marks = [int(x) for x in marks.split(sep=",")]
+                print("Updated!")
+                
+
     # elif user == 5:
     elif user == 6:
         print("Goodbye !!!")
