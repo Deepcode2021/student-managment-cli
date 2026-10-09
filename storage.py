@@ -4,24 +4,38 @@ from dataclasses import asdict
 from models import Student
 
 def load_students():
-    try:
-        # Attempt to open and read the file
-        with open("student_data.json", "r") as file:
+    if not os.path.exists("student_data.json"):
+        return []
 
-            data = json.load(file) #if i am storing the data in json
-            return Student(**data)
+
+    try:
         
-            # print("File loaded successfully!", data)
-    except FileNotFoundError:
-        # This block runs ONLY if the file doesn't exist
-        print("File not exist")
-        print({"name": "Unknown", "marks": []})
+        with open("student_data.json", "r") as file:
+            data_list = json.load(file)
+            # don't know what was happijng here
+            if not isinstance(data_list, list):
+                return []
+            return [Student(**item) for item in data_list]
+        
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+    
+    #         data = json.load(file) #if i am storing the data in json
+    #         # return Student(**data)
+    #         return [Student(**data) for data in data]
+    #         # print("File loaded successfully!", data)
+    # except FileNotFoundError:
+    #     # This block runs ONLY if the file doesn't exist
+    #     print("File not exist")
+    #     print({"name": "Unknown", "marks": []})
 
 def save_students(student):
     student_dict = asdict(student) # converts the class into dict
-
+    current_students = load_students()
+    current_students.append(student)
+    serialized_list = [asdict(s) for s in current_students]
     with open("student_data.json", "w") as file:
-        json.dump(student_dict ,file, indent=4)
+        json.dump(serialized_list ,file, indent=4)
         print("Student Added.")
 
 

@@ -13,6 +13,10 @@ while True:
         marks = [int(x) for x in marks.split(sep=",")]
         stu = Student(id=id, name=name, marks=marks)
         storage.save_students(stu)
+    
+    elif user == 6:
+        print("Goodbye !!!")
+        break
     else:
         print("Error ye kya type kardiya !!!")
 

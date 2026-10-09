@@ -3,10 +3,9 @@ from dataclasses import dataclass
 
 @dataclass
 class Student:
-    def __init__(self, id ,name, marks):
-        self.id = int
-        self.name = str
-        self.marks = list[int]
+    id: int
+    name: str
+    marks: list[int]
 
         # self.marks
     def add_marks(self ,mark):
