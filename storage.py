@@ -15,7 +15,13 @@ def load_students():
             # don't know what was happijng here
             if not isinstance(data_list, list):
                 return []
-            return [Student(**item) for item in data_list]
+
+            students = []
+            for item in data_list:
+                item.pop("average_mark", None)
+                students.append(Student(**item))
+            return students
+            # return [Student(**item) for item in data_list]
         
     except (FileNotFoundError, json.JSONDecodeError):
         return []

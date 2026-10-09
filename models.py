@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass ,field
 
 
 @dataclass
@@ -6,8 +6,11 @@ class Student:
     id: int
     name: str
     marks: list[int]
-
+    average_mark :float = field(init=False)
         # self.marks
+    def __post_init__(self):
+        self.average_mark = self.average()
+
     def add_marks(self ,mark):
         self.marks.append(mark)
 
@@ -17,8 +20,9 @@ class Student:
         else:
             return sum(self.marks)/len(self.marks) # average of the marks 
             # print(average())
+    
     def display(self):
-        print(f"Student | {self.id} | Name :{self.name} | Marks :{self.marks} | Avg :{self.average()} |") #calling of average funtion is necessary
+        print(f"ID | {self.id} | Name : {self.name} | Marks : {self.marks} | Avg :{self.average():.2f} |") #calling of average funtion is necessary
 
 # id = int(input("Enter the ID: "))
 # name = str(input("Enter the name: "))

@@ -13,7 +13,19 @@ while True:
         marks = [int(x) for x in marks.split(sep=",")]
         stu = Student(id=id, name=name, marks=marks)
         storage.save_students(stu)
-    
+    elif user == 2:
+        print("\n--- Student Database Records ---")
+        students = storage.load_students()
+        
+        if not students:
+            print("No student records found in the database.")
+        else:
+            for s in students:
+                s.display()  # This will print your formatted row nicely
+        print("---------------------------------\n")
+    # elif user == 3:
+    # elif user == 4:
+    # elif user == 5:
     elif user == 6:
         print("Goodbye !!!")
         break
