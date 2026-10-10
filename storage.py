@@ -44,7 +44,18 @@ def save_students(student):
         json.dump(serialized_list ,file, indent=4)
         print("Student Added.")
 
-
+def update(student, ID):
+    # student_dict = asdict(student) # converts the class into dict
+    current_students = load_students()
+    for s in current_students:
+        if s.id == ID:
+            s.id = student.id
+            s.name = student.name
+            s.marks = student.marks 
+    serialized_list = [asdict(s) for s in current_students]
+    with open("student_data.json", "w") as file:
+        json.dump(serialized_list ,file, indent=4)
+        # print("Student Added.")
 # load_students()
 # WRONG: Passing the Class template itself
 # save_students(Student)

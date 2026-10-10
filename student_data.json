@@ -1,15 +1,5 @@
 [
     {
-        "id": 33,
-        "name": "deep",
-        "marks": [
-            10,
-            50,
-            80
-        ],
-        "average_mark": 46.666666666666664
-    },
-    {
         "id": 20,
         "name": "rakesh",
         "marks": [
@@ -30,23 +20,23 @@
     },
     {
         "id": 43,
-        "name": "mk12",
+        "name": "mm",
         "marks": [
-            45,
-            67,
-            89
+            1,
+            2,
+            3
         ],
-        "average_mark": 67.0
+        "average_mark": 50.0
     },
     {
         "id": 33,
-        "name": "DEEP",
+        "name": "DeeP",
         "marks": [
-            34,
-            56,
-            23
+            10,
+            20,
+            30
         ],
-        "average_mark": 37.666666666666664
+        "average_mark": 20.0
     },
     {
         "id": 89,
@@ -57,5 +47,15 @@
             99
         ],
         "average_mark": 92.66666666666667
+    },
+    {
+        "id": 22,
+        "name": "DeEp",
+        "marks": [
+            10,
+            50,
+            80
+        ],
+        "average_mark": 46.666666666666664
     }
 ]
