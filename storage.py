@@ -36,7 +36,7 @@ def load_students():
     #     print({"name": "Unknown", "marks": []})
 
 def save_students(student):
-    student_dict = asdict(student) # converts the class into dict
+    # student_dict = asdict(student) # converts the class into dict
     current_students = load_students()
     current_students.append(student)
     serialized_list = [asdict(s) for s in current_students]
@@ -52,10 +52,24 @@ def update(student, ID):
             s.id = student.id
             s.name = student.name
             s.marks = student.marks 
+            s.average = student.average()
     serialized_list = [asdict(s) for s in current_students]
     with open("student_data.json", "w") as file:
         json.dump(serialized_list ,file, indent=4)
-        # print("Student Added.")
+
+def delete(ID):
+    # student_dict = asdict(student) # converts the class into dict
+    current_students = load_students()
+    for index, s in enumerate(current_students):
+        if s.id == ID:
+            student_found = s
+            # Remove the item at this specific index
+            del current_students[index]  
+            break
+    serialized_list = [asdict(s) for s in current_students]
+    with open("student_data.json", "w") as file:
+        json.dump(serialized_list ,file, indent=4)
+        print("Student Deleted.")
 # load_students()
 # WRONG: Passing the Class template itself
 # save_students(Student)

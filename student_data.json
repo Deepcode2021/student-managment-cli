@@ -20,23 +20,23 @@
     },
     {
         "id": 43,
-        "name": "mm",
+        "name": "yoo",
         "marks": [
             1,
             2,
             3
         ],
-        "average_mark": 50.0
+        "average_mark": 2.0
     },
     {
         "id": 33,
-        "name": "DeeP",
+        "name": "DEEP",
         "marks": [
-            10,
-            20,
-            30
+            99,
+            99,
+            99
         ],
-        "average_mark": 20.0
+        "average_mark": 99.0
     },
     {
         "id": 89,
@@ -47,15 +47,5 @@
             99
         ],
         "average_mark": 92.66666666666667
-    },
-    {
-        "id": 22,
-        "name": "DeEp",
-        "marks": [
-            10,
-            50,
-            80
-        ],
-        "average_mark": 46.666666666666664
     }
 ]

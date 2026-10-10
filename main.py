@@ -72,8 +72,14 @@ while True:
                 storage.update(update_stu ,id)
                 print("Updated!")
                 
-
-    # elif user == 5:
+    # delete
+    elif user == 5:
+        data = storage.load_students()
+        delete_id = int(input("ID to be deleted: "))
+        for s in data:
+            if s.id == delete_id:
+                storage.delete(delete_id)
+                
     elif user == 6:
         print("Goodbye !!!")
         break
