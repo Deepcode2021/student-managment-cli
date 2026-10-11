@@ -41,17 +41,34 @@ while True:
         user = int(input(": "))
         if user == 1:
             search_id = int(input("Id :"))
+            found = False
             for s in data:
                 if s.id == search_id: # error here i used s[id] this is used for dict not instance
                     s.display()
+                    found = True
+                    break
+                elif found:
+                    found = False
+                    # print("Not found !")
+            if found == False:
+                print("NOT FOUND!!")
+                
 
         elif user == 2:
             search_name = str(input("Name :"))
+            found = False
             for s in data:
                 if s.name.lower() == (search_name).lower():
                     # print(type(s.name), type(search_name)) fuck me only adding .lower <- this is a function 
                     s.display()
+                    found = True
                     continue
+                elif found:
+                    found = False
+            if found == False:
+                print("NOT FOUND!!")
+                
+
         else:
             print("what is this man!!!")
         space()
