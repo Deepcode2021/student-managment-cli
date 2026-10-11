@@ -44,18 +44,46 @@ def save_students(student):
         json.dump(serialized_list ,file, indent=4)
         print("Student Added.")
 
-def update(student, ID):
+def update(original_id, new_id=None, new_name=None, new_marks=None):
     # student_dict = asdict(student) # converts the class into dict
-    current_students = load_students()
-    for s in current_students:
-        if s.id == ID:
-            s.id = student.id
-            s.name = student.name
-            s.marks = student.marks 
-            s.average = student.average()
-    serialized_list = [asdict(s) for s in current_students]
+    students = load_students()
+
+    # for s in current_students:
+        
+        # if s.id == ID:
+        #     s.id = student.id
+        #     s.name = student.name
+        #     s.marks = student.marks 
+        #     s.average = student.average()
+
+    if new_id is not None and new_id != original_id:
+        for s in students:
+            if s.id == new_id:
+                print(f"Error: ID {new_id} is already taken. Cannot update.")
+                return # Stop here
+
+    # 3. FIND & MODIFY
+    found = False
+    for index, s in enumerate(students):
+        if s.id == original_id:
+            # Update only what the user entered
+            if new_id is not None: s.id = new_id
+            if new_name is not None: s.name = new_name
+            if new_marks is not None: s.marks = new_marks
+            
+            # Recalculate average
+            s.__post_init__()
+            
+            # Save back to list
+            students[index] = s
+            found = True
+            break
+
+
+    serialized_list = [asdict(s) for s in students]
     with open("student_data.json", "w") as file:
         json.dump(serialized_list ,file, indent=4)
+        print("Updated!!!")
 
 def delete(ID):
     # student_dict = asdict(student) # converts the class into dict

@@ -59,18 +59,32 @@ while True:
     elif user == 4:
         data = storage.load_students()
         user_id = int(input("ID: "))
-        for s in data:
-            if s.id == user_id: 
-                s.display()
-                # user_name = str(input("Name: "))
-            # if s.name == user_name:
-                id = int(input("New ID: "))
-                name = str(input("new name: "))
-                marks = input("new marks of 3 (10,20,30): ")
-                marks = [int(x) for x in marks.split(sep=",")]
-                update_stu = Student(id=id,name=name,marks=marks)
-                storage.update(update_stu ,id)
-                print("Updated!")
+        # for s in data:
+        #     if s.id == user_id: 
+        #         s.display()
+        #         # user_name = str(input("Name: "))
+        #     # if s.name == user_name:
+        #         id = int(input("New ID: "))
+        #         name = str(input("new name: "))
+        #         marks = input("new marks of 3 (10,20,30): ")
+        #         marks = [int(x) for x in marks.split(sep=",")]
+        #         update_stu = Student(id=id,name=name,marks=marks)
+        #         storage.update(update_stu ,id)
+                # print("Updated!")
+        
+
+        # 2. Ask for new details (Press Enter to skip)
+        new_id_input = input(f"New ID (Press Enter to keep {user_id}): ")
+        new_name = input("New Name (Press Enter to keep current): ")
+        new_marks_input = input("New Marks (Press Enter to keep current): ")
+
+        # 3. Process inputs (Convert empty strings to None)
+        final_id = int(new_id_input) if new_id_input.strip() else None # new thing i learn to apply if else in single line 
+        final_name = new_name if new_name.strip() else None
+        final_marks = [int(x) for x in new_marks_input.split(",")] if new_marks_input.strip() else None
+
+        # 4. Call the function
+        storage.update(user_id, new_id=final_id, new_name=final_name, new_marks=final_marks)
                 
     # delete
     elif user == 5:
