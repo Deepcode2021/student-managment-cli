@@ -4,14 +4,14 @@
 
 ##Installation
 #### Very simple Just Clone this repo
-''' bash
+```bash
 git clone https://github.com/Deepcode2021/student-managment-cli.git
-'''
+```
 
 #### Run the python file '''main.py'''
-'''
+``` bash
 python3 main.py
-'''
+```
 
 ### Feature (*Not much*)
 
