@@ -1,5 +1,5 @@
 # Student Managment CLI
-#### My first Staring Project to start the ** GSoC 2027 ** Contribution
+#### My first Staring Project to start the **GSoC 2027** Contribution
 #### A full CRUD CLI
 
 ## Installation
@@ -21,4 +21,4 @@ python3 main.py
 3. Update the students
 4. Delete the students
 
-### ** :) **
+### **:)**
