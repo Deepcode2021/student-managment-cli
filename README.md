@@ -1,8 +1,8 @@
 # Student Managment CLI
-#### My first Staring Project to start the **GSoC 2027** Contribution
+#### My first Staring Project to start the ** GSoC 2027 ** Contribution
 #### A full CRUD CLI
 
-##Installation
+## Installation
 #### Very simple Just Clone this repo
 ```bash
 git clone https://github.com/Deepcode2021/student-managment-cli.git
@@ -21,4 +21,4 @@ python3 main.py
 3. Update the students
 4. Delete the students
 
-### **:)**
+### ** :) **
