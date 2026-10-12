@@ -8,7 +8,7 @@
 git clone https://github.com/Deepcode2021/student-managment-cli.git
 ```
 
-#### Run the python file '''main.py'''
+#### Run the python file  main.py
 ``` bash
 python3 main.py
 ```
